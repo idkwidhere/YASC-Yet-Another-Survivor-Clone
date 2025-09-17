@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://rhhk4klikl5o"]
+
+[ext_resource type="Script" uid="uid://vq2uw3m8ju2r" path="res://UI Popups/Level Up/level_up_screen.gd" id="1_ab8nk"]
+
+[node name="LevelUpScreen" type="CanvasLayer"]
+script = ExtResource("1_ab8nk")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.5
+offset_top = -207.0
+offset_right = 369.5
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -15.5
+offset_right = 113.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1

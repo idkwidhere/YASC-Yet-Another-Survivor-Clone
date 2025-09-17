@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu3bseyt21tk5"]
+
+[ext_resource type="Texture2D" uid="uid://c8fc1axi10o6e" path="res://Entities/XPDrops/basic_xpdrop.png" id="1_an75u"]
+[ext_resource type="Script" uid="uid://btoasqlq4xa5h" path="res://Entities/XPDrops/basic_xp_drop.gd" id="1_j8aoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8aoc"]
+size = Vector2(16, 16)
+
+[node name="Basic XPDrop" type="Area2D"]
+script = ExtResource("1_j8aoc")
+
+[node name="XPDropSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_an75u")
+
+[node name="XPDropCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j8aoc")

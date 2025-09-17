@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://dksfu72v5me58"]
+
+[ext_resource type="Script" uid="uid://b5cio7n88dt00" path="res://Entities/Player/Characters/player_data.gd" id="1_00hbs"]
+
+[resource]
+script = ExtResource("1_00hbs")
+character_name = "Jenni3"
+character_description = "Jenni3 is fast but not very powerful."
+max_health = 4
+speed = 370.0
+attack_speed = 2.0
+proj_pierce = 1
+attack_damage = 40.0
+metadata/_custom_type_script = "uid://b5cio7n88dt00"

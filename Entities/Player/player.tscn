@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://cx2e67r63fhu1"]
+
+[ext_resource type="Script" uid="uid://curqagt6towbh" path="res://Entities/Player/player.gd" id="1_3uyv8"]
+[ext_resource type="Texture2D" uid="uid://cdp7n2ahp4jet" path="res://icon.svg" id="1_mv1ah"]
+[ext_resource type="Resource" uid="uid://dksfu72v5me58" path="res://Entities/Player/Characters/Jenni3.tres" id="2_lu8i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3uyv8"]
+radius = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyv8"]
+size = Vector2(925.5, 490.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lu8i8"]
+radius = 47.518417
+
+[sub_resource type="Curve2D" id="Curve2D_3uyv8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -702, -480, 0, 0, 0, 0, 780, -479, 0, 0, 0, 0, 796, 563, 0, 0, 0, 0, -699, 566, 0, 0, 0, 0, -700, -481)
+}
+point_count = 5
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3uyv8")
+character = ExtResource("2_lu8i8")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("1_mv1ah")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3uyv8")
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RangeArea" type="Area2D" parent="."]
+
+[node name="PlayerRange" type="CollisionShape2D" parent="RangeArea"]
+shape = SubResource("RectangleShape2D_3uyv8")
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="PickupCollider" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_lu8i8")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(1.25, 1.25)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="Bullets" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Health" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -52.0
+offset_right = 13.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "0/0"
+
+[node name="EnemySpawn" type="Path2D" parent="."]
+position = Vector2(-34.539368, 0)
+scale = Vector2(1.0433912, 1)
+curve = SubResource("Curve2D_3uyv8")
+
+[node name="EnemySpawnPath" type="PathFollow2D" parent="EnemySpawn"]
+position = Vector2(-702, -480)
+rotation = 0.00067476375
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LevelProgress" type="ProgressBar" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -481.5
+offset_right = 280.0
+offset_bottom = -454.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="area_entered" from="RangeArea" to="." method="_on_range_area_area_entered"]
+[connection signal="area_exited" from="RangeArea" to="." method="_on_range_area_area_exited"]
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]

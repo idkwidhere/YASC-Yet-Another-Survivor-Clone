@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cj21novd8g2ef"]
+
+[node name="UpgradeChoice" type="Button"]
+offset_right = 63.0
+offset_bottom = 50.0
+text = "Choice"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5l6n8d3mgsbb"]
+
+[ext_resource type="Script" uid="uid://cdprod38ak4jk" path="res://Entities/Effects/damage_label.gd" id="1_pimmo"]
+
+[node name="DamageLabel" type="Label"]
+top_level = true
+offset_left = -24.0
+offset_top = -17.0
+offset_right = 25.0
+offset_bottom = 6.0
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_pimmo")
+
+[node name="Destroy" type="Timer" parent="."]
+
+[connection signal="timeout" from="Destroy" to="." method="_on_destroy_timeout"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://ctrx2ejg188ib"]
+
+[ext_resource type="Script" uid="uid://b5cio7n88dt00" path="res://Entities/Player/Characters/player_data.gd" id="1_ag35q"]
+
+[resource]
+script = ExtResource("1_ag35q")
+character_name = "Cyborg Joe"
+character_description = "Cyborg Joe is a pretty mediocre cyborg with middling base stats but a lot of heart."
+max_health = 4
+speed = 300.0
+attack_speed = 1.0
+attack_range = 20.0
+attack_damage = 70.0
+metadata/_custom_type_script = "uid://b5cio7n88dt00"
