@@ -35,6 +35,7 @@ shape = SubResource("CircleShape2D_3uyv8")
 unique_name_in_owner = true
 
 [node name="RangeArea" type="Area2D" parent="."]
+collision_mask = 3
 
 [node name="PlayerRange" type="CollisionShape2D" parent="RangeArea"]
 shape = SubResource("RectangleShape2D_3uyv8")
@@ -144,5 +145,7 @@ text = "Crit Multiplier: "
 
 [connection signal="area_entered" from="RangeArea" to="." method="_on_range_area_area_entered"]
 [connection signal="area_exited" from="RangeArea" to="." method="_on_range_area_area_exited"]
+[connection signal="body_entered" from="RangeArea" to="." method="_on_range_area_body_entered"]
+[connection signal="body_exited" from="RangeArea" to="." method="_on_range_area_body_exited"]
 [connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]

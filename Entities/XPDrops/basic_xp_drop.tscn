@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu3bseyt21tk5"]
+[gd_scene load_steps=6 format=3 uid="uid://bu3bseyt21tk5"]
 
 [ext_resource type="Texture2D" uid="uid://c8fc1axi10o6e" path="res://Entities/XPDrops/basic_xpdrop.png" id="1_an75u"]
 [ext_resource type="Script" uid="uid://btoasqlq4xa5h" path="res://Entities/XPDrops/basic_xp_drop.gd" id="1_j8aoc"]
+[ext_resource type="Shader" uid="uid://cfrrql3qqlq0p" path="res://Entities/XPDrops/basic_xp_drop.gdshader" id="2_67elp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qx43m"]
+shader = ExtResource("2_67elp")
+shader_parameter/speed = 1.5
+shader_parameter/width = 0.15
+shader_parameter/shimmer_color = Color(1, 1, 1, 0.8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8aoc"]
 size = Vector2(16, 16)
@@ -10,6 +17,7 @@ size = Vector2(16, 16)
 script = ExtResource("1_j8aoc")
 
 [node name="XPDropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qx43m")
 texture = ExtResource("1_an75u")
 
 [node name="XPDropCollider" type="CollisionShape2D" parent="."]

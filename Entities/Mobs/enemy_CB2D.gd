@@ -28,8 +28,13 @@ func _process(_delta: float) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	var direction = global_position.direction_to(player.global_position)
-	position += delta * speed * direction
+	pass#var direction = global_position.direction_to(player.global_position)
+	#position += delta * speed * direction
+	
+	if player:
+		var direction = (player.global_position - global_position).normalized()
+		velocity = direction * speed
+		move_and_slide()
 
 
 func take_damage(damage_amount):
@@ -43,13 +48,10 @@ func damage_popup(damage_amount):
 	#dmglabel.position = %DmgLabel.position
 	add_child(dmglabel)
 
-
-func _on_area_entered(area: Area2D) -> void:
+func _on_enemy_area_area_entered(area: Area2D) -> void:
 	if area is BasicProjectile:
 		take_damage(area.proj_damage)
-		
 
-
-func _on_body_entered(body: Node2D) -> void:
+func _on_enemy_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.take_damage(damage)

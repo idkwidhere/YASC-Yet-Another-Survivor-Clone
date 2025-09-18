@@ -135,7 +135,6 @@ func level_up():
 	var temp_level_choices = LEVEL_UP_SCREEN.instantiate()
 	%UI.add_child(temp_level_choices)
 	xp_needed = (xp_base * pow(xp_growth_rate, level - 1))
-	print(%LevelProgress.max_value)
 	%LevelProgress.max_value = xp_needed
 
 func upgrade_stats(stat, value):
@@ -169,8 +168,18 @@ func _on_range_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Enemies"):
 		enemies_in_range.erase(area)
 
+
+func _on_range_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemies"):
+		enemies_in_range.append(body)
+
+func _on_range_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Enemies"):
+		enemies_in_range.erase(body)
+
 func _on_pickup_area_area_entered(area: Area2D) -> void:
 	if area is XPDrop:
+		#%CoinEffect.play() add coineffect node and add effect to stream player
 		xp += area.value
 		total_xp += area.value
 		if xp >= xp_needed:
