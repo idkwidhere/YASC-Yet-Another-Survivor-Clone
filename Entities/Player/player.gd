@@ -112,6 +112,12 @@ func _on_attack_timer_timeout() -> void:
 
 # taking damage
 func take_damage(damage_amount):
+	var mat = $PlayerSprite.material
+	if mat is ShaderMaterial:
+		mat.set_shader_parameter("flash_strength", 1.0)
+		var tween = create_tween()
+		tween.tween_property(mat, "shader_parameter/flash_strength", 0.0, 0.3)
+	
 	health -= damage_amount
 	health_label.text = str(health) + "/" + str(max_health)
 
