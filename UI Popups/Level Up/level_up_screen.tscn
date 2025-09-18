@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vq2uw3m8ju2r" path="res://UI Popups/Level Up/level_up_screen.gd" id="1_ab8nk"]
 
 [node name="LevelUpScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_ab8nk")
 
 [node name="Panel" type="Panel" parent="."]

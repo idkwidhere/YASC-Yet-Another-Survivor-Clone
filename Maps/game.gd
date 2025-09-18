@@ -16,12 +16,9 @@ func _ready() -> void:
 	player = get_node("Player")
 	enemy_spawn_path = player.get_node("EnemySpawn/EnemySpawnPath")
 	
-	# load stats in infopanel
-	%"Damage Label".text = "Damage: " + str(player.attack_damage)
 	
-	
-	#for i in range(5):
-		#spawn_mob()
+	for i in range(5):
+		spawn_mob()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,4 +39,4 @@ func level_up() -> void:
 
 func _on_enemy_timer_timeout() -> void:
 	for i in range(randi_range(1, 3)):
-		pass#spawn_mob()
+		spawn_mob()

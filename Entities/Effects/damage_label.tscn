@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cdprod38ak4jk" path="res://Entities/Effects/damage_label.gd" id="1_pimmo"]
 
 [node name="DamageLabel" type="Label"]
-top_level = true
 offset_left = -24.0
 offset_top = -17.0
 offset_right = 25.0

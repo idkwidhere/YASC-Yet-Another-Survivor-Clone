@@ -11,4 +11,7 @@ speed = 370.0
 attack_speed = 2.0
 proj_pierce = 1
 attack_damage = 40.0
+crit_rate = 10.0
+crit_mult = 1.5
+pickup_range = 50.0
 metadata/_custom_type_script = "uid://b5cio7n88dt00"

@@ -9,3 +9,6 @@ class_name Character
 @export var proj_pierce: int
 @export var attack_range: float
 @export var attack_damage: float
+@export var crit_rate: float
+@export var crit_mult: float
+@export var pickup_range: float

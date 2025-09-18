@@ -41,7 +41,7 @@ func take_damage(damage_amount):
 func damage_popup(damage_amount):
 	var dmglabel = DAMAGE_LABEL.instantiate()
 	dmglabel.amount = damage_amount
-	dmglabel.global_position = %DmgLabel.global_position
+	#dmglabel.position = %DmgLabel.position
 	add_child(dmglabel)
 
 

@@ -5,10 +5,13 @@
 [resource]
 script = ExtResource("1_ag35q")
 character_name = "Cyborg Joe"
-character_description = "Cyborg Joe is a pretty mediocre cyborg with middling base stats but a lot of heart."
+character_description = "Cyborg Joe is a pretty mediocre cyborg with middling base stats but a lot of cybernetic heart."
 max_health = 4
 speed = 300.0
 attack_speed = 1.0
 attack_range = 20.0
 attack_damage = 70.0
+crit_rate = 10.0
+crit_mult = 2.0
+pickup_range = 50.0
 metadata/_custom_type_script = "uid://b5cio7n88dt00"
