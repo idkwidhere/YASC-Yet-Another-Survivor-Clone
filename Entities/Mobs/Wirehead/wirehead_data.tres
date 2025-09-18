@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Mob_Data" load_steps=3 format=3 uid="uid://dcvqs0dw2wbl4"]
+
+[ext_resource type="Texture2D" uid="uid://crqqovo81c0kt" path="res://Entities/Mobs/Wirehead/wireheadsprite.png" id="1_5xdrm"]
+[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Mobs/mob_data.gd" id="1_gff5n"]
+
+[resource]
+script = ExtResource("1_gff5n")
+mob_name = "Wirehead"
+mob_health = 120.0
+mob_damage = 1.0
+mob_speed = 200.0
+mob_sprite = ExtResource("1_5xdrm")
+metadata/_custom_type_script = "uid://bs8psdv26kkb1"

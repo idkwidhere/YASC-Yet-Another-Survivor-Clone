@@ -22,11 +22,15 @@ var crit_mult
 var pickup_range
 
 # leveling stuff
-@export var level: int = 0
-var xp: float = 0
-var xp_needed: float = 100
-var total_xp: float = 0
+@export_category("Player Level Detail")
+@export var level: int = 1
+@export var xp_base: float = 100
+@export var xp_growth_rate: float = 1.2
+@export var xp: float = 0
+@export var xp_needed: float
+@export var total_xp: float = 0
 
+# enemies in range array i guess
 var enemies_in_range: Array = []
 
 func _ready() -> void:
@@ -49,6 +53,9 @@ func _ready() -> void:
 	health = max_health
 	
 	health_label.text = str(health) + "/" + str(max_health)
+	
+	xp_needed = (xp_base * pow(xp_growth_rate, level - 1))
+	print(xp_needed)
 	update_stats()
 
 func _physics_process(_delta: float) -> void:
@@ -123,11 +130,13 @@ func update_level():
 	
 
 func level_up():
-	%LevelProgress.max_value = xp_needed
 	level += 1
 	SignalBus.emit_signal("level_up")
 	var temp_level_choices = LEVEL_UP_SCREEN.instantiate()
 	%UI.add_child(temp_level_choices)
+	xp_needed = (xp_base * pow(xp_growth_rate, level - 1))
+	print(%LevelProgress.max_value)
+	%LevelProgress.max_value = xp_needed
 
 func upgrade_stats(stat, value):
 	var to_upgrade = get(stat)

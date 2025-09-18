@@ -7,7 +7,8 @@ extends Node2D
 var player = null
 var enemy_spawn_path = null
 
-const BAT = preload("uid://dw1y7w1nigo6u")
+const PATCHRAT = preload("uid://dw1y7w1nigo6u")
+const WIREHEAD = preload("uid://hbespbwpg4em")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,11 +28,11 @@ func _process(_delta: float) -> void:
 
 
 func spawn_mob() -> void:
-	var bat_temp = BAT.instantiate()
+	var mob_temp = WIREHEAD.instantiate()
 	enemy_spawn_path.progress_ratio = randf_range(0, 1)
-	bat_temp.position = enemy_spawn_path.global_position
-	bat_temp.add_to_group("Enemies")
-	get_node("Enemies").add_child(bat_temp)
+	mob_temp.position = enemy_spawn_path.global_position
+	mob_temp.add_to_group("Enemies")
+	get_node("Enemies").add_child(mob_temp)
 
 func level_up() -> void:
 	print("leveled up, show screen")

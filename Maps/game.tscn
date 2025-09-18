@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://dyrkc0j48lpvr"]
+[gd_scene load_steps=6 format=4 uid="uid://dyrkc0j48lpvr"]
 
 [ext_resource type="Script" uid="uid://bv7e8ix1ffd7f" path="res://Maps/game.gd" id="1_6et8r"]
 [ext_resource type="PackedScene" uid="uid://cx2e67r63fhu1" path="res://Entities/Player/player.tscn" id="1_n8bjf"]
 [ext_resource type="Texture2D" uid="uid://c6gjk20qmp0fi" path="res://Maps/Assets/GRASS.png" id="2_y2ywj"]
-[ext_resource type="PackedScene" uid="uid://bu3bseyt21tk5" path="res://Entities/XPDrops/basic_xp_drop.tscn" id="4_6et8r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ldu1"]
 texture = ExtResource("2_y2ywj")
@@ -359,6 +358,8 @@ sources/0 = SubResource("TileSetAtlasSource_1ldu1")
 [node name="Game" type="Node2D"]
 script = ExtResource("1_6et8r")
 
+[node name="Node" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_n8bjf")]
 z_index = 1
 
@@ -371,78 +372,6 @@ tile_set = SubResource("TileSet_6et8r")
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="XP" type="Node2D" parent="."]
-
-[node name="Basic XPDrop" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-189, 1)
-
-[node name="Basic XPDrop2" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-417, 6)
-
-[node name="Basic XPDrop3" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop16" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop17" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop18" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop19" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop20" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop21" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop22" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop23" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop24" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-355, 3)
-
-[node name="Basic XPDrop4" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-300, 8)
-
-[node name="Basic XPDrop5" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-248, 3)
-
-[node name="Basic XPDrop6" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-289, -89)
-
-[node name="Basic XPDrop7" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-322, -93)
-
-[node name="Basic XPDrop8" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-356, -93)
-
-[node name="Basic XPDrop9" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-394, -91)
-
-[node name="Basic XPDrop10" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-442, -96)
-
-[node name="Basic XPDrop11" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-470, -97)
-
-[node name="Basic XPDrop12" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-496, -98)
-
-[node name="Basic XPDrop13" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-524, -97)
-
-[node name="Basic XPDrop14" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-552, -97)
-
-[node name="Basic XPDrop15" parent="XP" instance=ExtResource("4_6et8r")]
-position = Vector2(-577, -94)
 
 [node name="Timers" type="Node" parent="."]
 
