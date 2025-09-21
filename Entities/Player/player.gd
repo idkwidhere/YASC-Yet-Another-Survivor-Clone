@@ -55,7 +55,6 @@ func _ready() -> void:
 	health_label.text = str(health) + "/" + str(max_health)
 	
 	xp_needed = (xp_base * pow(xp_growth_rate, level - 1))
-	print(xp_needed)
 	update_stats()
 
 func _physics_process(_delta: float) -> void:

@@ -12,11 +12,12 @@ var stats_dict = {
 const UPGRADE_CHOICE = preload("uid://cj21novd8g2ef")
 var choices_array: Array = []
 var choice_amount: int = 3
+var check_doubles_array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_tree().paused = true
-	create_buttons(get_choices_from_tier(choice_amount), choice_amount)
+	create_buttons(get_choices_from_tier(choice_amount))
 	SignalBus.connect("upgrade_chosen", choice_made)
 
 func get_tier() -> int:
@@ -29,18 +30,34 @@ func get_tier() -> int:
 		return 3
 	else: return 4
 
+
 func get_choices_from_tier(n) -> Dictionary:
 	var new_dict = {}
-	for i in range(n):
+	check_doubles_array = []
+	var i = 0
+	#for i in range(n):
+		#var tier = get_tier()
+		#var tier_upgrades = stats_dict[tier]
+		#var keys = tier_upgrades.keys()
+		#var chosen_key = keys[randi() % keys.size()]
+		#var chosen_value = tier_upgrades[chosen_key]
+		#new_dict[chosen_key] = chosen_value
+	while (i < n):
 		var tier = get_tier()
 		var tier_upgrades = stats_dict[tier]
 		var keys = tier_upgrades.keys()
 		var chosen_key = keys[randi() % keys.size()]
 		var chosen_value = tier_upgrades[chosen_key]
-		new_dict[chosen_key] = chosen_value
+		if check_doubles_array.has(chosen_key):
+			print("doubled")
+		else:
+			check_doubles_array.append(chosen_key)
+			new_dict[chosen_key] = chosen_value
+			i += 1
+		
 	return new_dict
 
-func create_buttons(choices: Dictionary, n: int):
+func create_buttons(choices: Dictionary):
 	var choices_as_array = choices.keys()
 	#print(choices_as_array)
 	for i in range(choices_as_array.size()):
@@ -50,6 +67,6 @@ func create_buttons(choices: Dictionary, n: int):
 		temp_choice.amount = choices[choices_as_array[i]]
 		%ChoiceContainer.add_child(temp_choice)
 
-func choice_made(n, i):
+func choice_made(_n, _i):
 	get_tree().paused = false
 	queue_free()

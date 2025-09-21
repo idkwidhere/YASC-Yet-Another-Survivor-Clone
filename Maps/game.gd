@@ -46,5 +46,5 @@ func level_up() -> void:
 
 
 func _on_enemy_timer_timeout() -> void:
-	for i in range(randi_range(1, 3)):
+	for i in range(randi_range(1, 5)):
 		spawn_mob(get_random_mob())

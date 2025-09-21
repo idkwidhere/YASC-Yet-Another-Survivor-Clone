@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dyrkc0j48lpvr"]
+[gd_scene load_steps=7 format=4 uid="uid://dyrkc0j48lpvr"]
 
 [ext_resource type="Script" uid="uid://bv7e8ix1ffd7f" path="res://Maps/game.gd" id="1_6et8r"]
 [ext_resource type="PackedScene" uid="uid://cx2e67r63fhu1" path="res://Entities/Player/player.tscn" id="1_n8bjf"]
 [ext_resource type="Texture2D" uid="uid://c6gjk20qmp0fi" path="res://Maps/Assets/GRASS.png" id="2_y2ywj"]
+[ext_resource type="Script" uid="uid://cyfptnm4yqynb" path="res://Maps/stopwatch.gd" id="4_6et8r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ldu1"]
 texture = ExtResource("2_y2ywj")
@@ -378,5 +379,19 @@ wait_time = 2.0
 autostart = true
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Stopwatch" type="Label" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.25
+offset_top = 21.0
+offset_right = 58.25
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_6et8r")
 
 [connection signal="timeout" from="Timers/EnemyTimer" to="." method="_on_enemy_timer_timeout"]
