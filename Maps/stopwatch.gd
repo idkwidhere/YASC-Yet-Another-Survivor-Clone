@@ -15,8 +15,8 @@ func reset_timer() -> void:
 	time = 0.0
 
 func time_to_string() -> String:
-	var sec = fmod(time, 60)
-	var min = time / 60
+	var secs = fmod(time, 60)
+	var mins = time / 60
 	var format_string = "%02d : %02d" 
-	var return_string = format_string % [min, sec]
+	var return_string = format_string % [mins, secs]
 	return return_string

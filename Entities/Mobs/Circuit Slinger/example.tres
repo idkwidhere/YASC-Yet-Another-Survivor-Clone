@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Mob_Data" load_steps=2 format=3 uid="uid://b0kfpf3fl838"]
+
+[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Mobs/mob_data.gd" id="1_bgogr"]
+
+[resource]
+script = ExtResource("1_bgogr")
+metadata/_custom_type_script = "uid://bs8psdv26kkb1"
