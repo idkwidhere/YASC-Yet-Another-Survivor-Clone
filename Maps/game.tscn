@@ -372,6 +372,8 @@ tile_set = SubResource("TileSet_6et8r")
 
 [node name="XP" type="Node2D" parent="."]
 
+[node name="Popups" type="Node2D" parent="."]
+
 [node name="Timers" type="Node" parent="."]
 
 [node name="EnemyTimer" type="Timer" parent="Timers"]

@@ -8,10 +8,9 @@ var amount: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	text = str(amount)
-	tween.tween_property(self, "position", end_pos, .5)
+	tween.tween_property(self, "position:y", position.y - 15, 0.5)
 	tween.tween_property(self, "modulate:a", 0.0, 1.0)
 	
-
 
 func _on_destroy_timeout() -> void:
 	queue_free()

@@ -81,13 +81,14 @@ func ranged_attack():
 func take_damage(damage_amount):
 	health -= damage_amount
 	damage_popup(damage_amount)
-	
 
+# fuck this thing, fix later
 func damage_popup(damage_amount):
 	var dmglabel = DAMAGE_LABEL.instantiate()
 	dmglabel.amount = damage_amount
 	#dmglabel.position = %DmgLabel.position
-	add_child(dmglabel)
+	dmglabel.global_position = global_position
+	get_tree().root.add_child(dmglabel)
 
 func _on_enemy_area_area_entered(area: Area2D) -> void:
 	if area is PlayerProjectile:
