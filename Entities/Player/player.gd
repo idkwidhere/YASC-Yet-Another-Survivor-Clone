@@ -75,8 +75,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 
-
-
 func _process(_delta: float) -> void:
 	if !enemies_in_range:
 		%AttackTimer.paused = true
@@ -172,7 +170,6 @@ func _on_range_area_area_entered(area: Area2D) -> void:
 func _on_range_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Enemies"):
 		enemies_in_range.erase(area)
-
 
 func _on_range_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):

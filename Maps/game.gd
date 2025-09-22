@@ -14,7 +14,9 @@ const WIREHEAD = preload("uid://hbespbwpg4em")
 
 var mobs = [
 	preload("uid://dw1y7w1nigo6u"),
-	preload("uid://hbespbwpg4em")
+	preload("uid://hbespbwpg4em"),
+	preload("uid://bd2t8oqdhval8")
+	
 ]
 
 # Called when the node enters the scene tree for the first time.

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Mob_Data" load_steps=3 format=3 uid="uid://bdi5ge713fkfb"]
+
+[ext_resource type="Texture2D" uid="uid://qkk1rvfqduhs" path="res://Entities/Mobs/Circuit Slinger/circuit_slinger_projectile.png" id="1_k7qxm"]
+[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Mobs/mob_data.gd" id="1_rqj2w"]
+
+[resource]
+script = ExtResource("1_rqj2w")
+mob_name = "Circuit Slinger"
+mob_health = 50.0
+mob_damage = 1.0
+mob_speed = 70.0
+is_ranged = true
+mob_projectile_texture = ExtResource("1_k7qxm")
+mob_range = 250.0
+mob_attack_speed = 3.0
+mob_projectile_speed = 100.0
+metadata/_custom_type_script = "uid://bs8psdv26kkb1"
