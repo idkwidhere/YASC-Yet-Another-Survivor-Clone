@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c12kmpm8xieh7"]
+
+[ext_resource type="Script" uid="uid://bm765754rtlgo" path="res://Entities/Enemies/Elites/elite_CB2D.gd" id="1_yqa1a"]
+[ext_resource type="Resource" uid="uid://c25yab24fuifx" path="res://Entities/Enemies/Elites/NetHulk/net_hulk.tres" id="2_7rfbl"]
+[ext_resource type="Texture2D" uid="uid://b5why0rp70ktu" path="res://Entities/Enemies/Elites/NetHulk/nethulksprite.png" id="3_r4cdm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxg6y"]
+radius = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntn7k"]
+radius = 15.0
+height = 70.0
+
+[node name="NetHulk" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_yqa1a")
+elite_data = ExtResource("2_7rfbl")
+
+[node name="EliteSprite" type="Sprite2D" parent="."]
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("3_r4cdm")
+
+[node name="EliteCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_dxg6y")
+
+[node name="EliteArea" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="Elite" type="CollisionShape2D" parent="EliteArea"]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_ntn7k")
+
+[connection signal="area_entered" from="EliteArea" to="." method="_on_elite_area_area_entered"]
+[connection signal="body_entered" from="EliteArea" to="." method="_on_elite_area_body_entered"]

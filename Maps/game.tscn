@@ -376,6 +376,10 @@ tile_set = SubResource("TileSet_6et8r")
 
 [node name="Timers" type="Node" parent="."]
 
+[node name="MinuteTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
+autostart = true
+
 [node name="EnemyTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 autostart = true
@@ -396,4 +400,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_6et8r")
 
+[connection signal="timeout" from="Timers/MinuteTimer" to="." method="_on_minute_timer_timeout"]
 [connection signal="timeout" from="Timers/EnemyTimer" to="." method="_on_enemy_timer_timeout"]

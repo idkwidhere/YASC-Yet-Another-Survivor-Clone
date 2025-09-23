@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Mob_Data" load_steps=3 format=3 uid="uid://d4m2wp6alco30"]
 
 [ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Mobs/mob_data.gd" id="1_0frlr"]
-[ext_resource type="Texture2D" uid="uid://dnao76ua7ujyb" path="res://Entities/Mobs/batsprite.png" id="1_1n0x0"]
+[ext_resource type="Texture2D" uid="uid://ofxo68kwlp4l" path="res://Entities/Mobs/Patchrat/patchratsprite.png" id="1_exy77"]
 
 [resource]
 script = ExtResource("1_0frlr")
 mob_name = "Bat"
+mob_sprite = ExtResource("1_exy77")
 mob_health = 100.0
 mob_damage = 1.0
 mob_speed = 125.0
-mob_sprite = ExtResource("1_1n0x0")
 metadata/_custom_type_script = "uid://bs8psdv26kkb1"

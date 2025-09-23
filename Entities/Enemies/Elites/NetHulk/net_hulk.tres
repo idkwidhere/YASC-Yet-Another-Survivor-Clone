@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Elite_Data" load_steps=2 format=3 uid="uid://c25yab24fuifx"]
+
+[ext_resource type="Script" uid="uid://ykejp72x1fmp" path="res://Entities/Enemies/Elites/elite_data.gd" id="1_pypnv"]
+
+[resource]
+script = ExtResource("1_pypnv")
+elite_name = "Net Hulk"
+elite_health = 400.0
+elite_damage = 2.0
+elite_speed = 170.0
+metadata/_custom_type_script = "uid://ykejp72x1fmp"

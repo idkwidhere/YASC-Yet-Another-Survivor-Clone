@@ -8,12 +8,11 @@ func _process(delta: float) -> void:
 	if stopped:
 		return
 	time += delta
-	
 	text = time_to_string()
-	
+
 func reset_timer() -> void:
 	time = 0.0
-
+	
 func time_to_string() -> String:
 	var secs = fmod(time, 60)
 	var mins = time / 60

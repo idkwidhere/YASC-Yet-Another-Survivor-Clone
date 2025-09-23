@@ -134,7 +134,6 @@ func update_level():
 
 func level_up():
 	level += 1
-	SignalBus.emit_signal("level_up")
 	var temp_level_choices = LEVEL_UP_SCREEN.instantiate()
 	%UI.add_child(temp_level_choices)
 	xp_needed = (xp_base * pow(xp_growth_rate, level - 1))
