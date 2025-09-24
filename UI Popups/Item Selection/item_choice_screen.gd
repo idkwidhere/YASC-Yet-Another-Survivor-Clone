@@ -1,13 +1,7 @@
 extends CanvasLayer
 
 # goal is that there is a 70% chance of getting a tier1 upgrade, 15% chance of getting a tier2 upgrade, 10% chance of getting a tier3 upgrade and 5% chance at tier 4
-var stats_dict = {
-	1: {"attack_damage": 5, "attack_speed": 0.1, "speed": 5, "max_health": 1, "pierce":1, "crit_rate": 5, "crit_mult": 0.25, "pickup_range": 10},
-	2: {"attack_damage": 10, "attack_speed": 0.2, "speed": 10, "max_health": 2, "pierce":2, "crit_rate": 10, "crit_mult": 0.5, "pickup_range": 25},
-	3: {"attack_damage": 15, "attack_speed": 0.4, "speed": 15, "max_health": 3, "pierce":3, "crit_rate": 15, "crit_mult": 1, "pickup_range": 35},
-	4: {"attack_damage": 20, "attack_speed": 0.8, "speed": 20, "max_health": 5, "pierce":5, "crit_rate": 20, "crit_mult": 2, "pickup_range": 50},
-}
-
+var stats_dict = {}
 
 const ITEM_CHOICE = preload("uid://rx0354jm7oqb")
 
@@ -19,7 +13,7 @@ var check_doubles_array = []
 func _ready() -> void:
 	get_tree().paused = true
 	create_buttons(get_choices_from_tier(choice_amount))
-	SignalBus.connect("upgrade_chosen", choice_made)
+	SignalBus.connect("item_chosen", choice_made)
 
 func get_tier() -> int:
 	var roll = randf() * 100
@@ -68,6 +62,6 @@ func create_buttons(choices: Dictionary):
 		temp_choice.amount = choices[choices_as_array[i]]
 		%ChoiceContainer.add_child(temp_choice)
 
-func choice_made(_n, _i):
+func choice_made(_item):
 	get_tree().paused = false
 	queue_free()
