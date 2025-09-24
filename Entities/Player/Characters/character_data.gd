@@ -1,6 +1,7 @@
 extends Resource
 class_name Character_Data
 
+@export_category("Character Base Stats")
 @export var character_name: String
 @export_multiline var character_description: String
 @export var max_health: int
@@ -12,3 +13,6 @@ class_name Character_Data
 @export var crit_rate: float
 @export var crit_mult: float
 @export var pickup_range: float
+
+@export_category("Character Base Items")
+@export var character_items: Array[PackedScene]

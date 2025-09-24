@@ -377,7 +377,7 @@ tile_set = SubResource("TileSet_6et8r")
 [node name="Timers" type="Node" parent="."]
 
 [node name="MinuteTimer" type="Timer" parent="Timers"]
-wait_time = 60.0
+wait_time = 5.0
 autostart = true
 
 [node name="EnemyTimer" type="Timer" parent="Timers"]

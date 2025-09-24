@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://rhhk4klikl5o"]
+[gd_scene load_steps=2 format=3 uid="uid://xlvnd6c8acru"]
 
-[ext_resource type="Script" uid="uid://vq2uw3m8ju2r" path="res://UI Popups/level_up_screen.gd" id="1_ab8nk"]
+[ext_resource type="Script" uid="uid://dmrumb6aumrj3" path="res://UI Popups/Item Selection/item_choice_screen.gd" id="1_pt0ty"]
 
-[node name="LevelUpScreen" type="CanvasLayer"]
+[node name="ItemChoiceScreen" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_ab8nk")
+script = ExtResource("1_pt0ty")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 8

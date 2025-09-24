@@ -8,6 +8,8 @@ class_name Player
 #preloads
 @onready var player_basic_projectile = preload("res://Entities/Projectiles/basic_projectile.tscn")
 const LEVEL_UP_SCREEN = preload("uid://rhhk4klikl5o")
+const ITEM_CHOICE_SCREEN = preload("uid://xlvnd6c8acru")
+
 
 
 @export var character: Character_Data
@@ -30,12 +32,16 @@ var pickup_range
 @export var xp_needed: float
 @export var total_xp: float = 0
 
+@export_category("Player Items")
+@export var player_items: Array = []
+
 # enemies in range array i guess
 var enemies_in_range: Array = []
 
 func _ready() -> void:
 	# connect signals
 	SignalBus.connect("upgrade_chosen", upgrade_stats)
+	SignalBus.connect("item_chosen", add_new_item)
 	
 	# load character data on game start
 	speed = character.speed
@@ -55,6 +61,11 @@ func _ready() -> void:
 	health_label.text = str(health) + "/" + str(max_health)
 	
 	xp_needed = (xp_base * pow(xp_growth_rate, level - 1))
+	
+	# item handle on startup
+	player_items = character.character_items
+	apply_items(player_items)
+	
 	update_stats()
 
 func _physics_process(_delta: float) -> void:
@@ -83,7 +94,15 @@ func _process(_delta: float) -> void:
 		
 	#if player_health <= 0:
 		#print("game over WIP")
-	
+
+
+# adding and applying items
+func add_new_item(item) -> void:
+	pass
+
+func apply_items(items: Array):
+	pass
+
 
 # dealing damage
 func player_attack(direction) -> void:
@@ -188,9 +207,7 @@ func _on_pickup_area_area_entered(area: Area2D) -> void:
 			xp -= xp_needed
 		area.picked_up()
 		update_level()
-	if area is Elite_Upgrade_Drop:
-		# add function to generate upgrades
+	if area is Item_Canister:
 		area.picked_up()
-
-func apply_items(items: Array):
-	pass
+		var temp_item_choices = ITEM_CHOICE_SCREEN.instantiate()
+		%UI.add_child(temp_item_choices)
