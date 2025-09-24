@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Mob_Data" load_steps=3 format=3 uid="uid://d4m2wp6alco30"]
 
-[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Mobs/mob_data.gd" id="1_0frlr"]
-[ext_resource type="Texture2D" uid="uid://ofxo68kwlp4l" path="res://Entities/Mobs/Patchrat/patchratsprite.png" id="1_exy77"]
+[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Enemies/Mobs/mob_data.gd" id="1_0frlr"]
+[ext_resource type="Texture2D" uid="uid://ofxo68kwlp4l" path="res://Entities/Enemies/Mobs/Patchrat/patchratsprite.png" id="1_exy77"]
 
 [resource]
 script = ExtResource("1_0frlr")

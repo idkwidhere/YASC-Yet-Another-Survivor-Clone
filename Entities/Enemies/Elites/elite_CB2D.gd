@@ -16,7 +16,7 @@ var elite_projectile_texture
 var elite_can_fire = false
 
 const MOB_PROJECTILE = preload("uid://csewfudf1m4xx")
-
+const ELITE_UPGRADE_DROP = preload("uid://coswhma77rkqk")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +29,7 @@ func _ready() -> void:
 	is_ranged = elite_data.is_ranged
 	elite_range = elite_data.elite_range
 	
+
 	
 	if is_ranged:
 		%RangedAttackTimer.wait_time = elite_data.elite_attack_speed
@@ -42,7 +43,11 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		var temp_xp = BASIC_XP_DROP.instantiate()
 		temp_xp.position = global_position
-		get_tree().root.get_node("/root/Game/XP").add_child(temp_xp)
+		get_tree().root.get_node("/root/Game/Drops").add_child(temp_xp)
+		
+		var temp_drop = ELITE_UPGRADE_DROP.instantiate()
+		temp_drop.position = global_position
+		get_tree().root.get_node("/root/Game/Drops").add_child(temp_drop)
 		queue_free()
 		
 

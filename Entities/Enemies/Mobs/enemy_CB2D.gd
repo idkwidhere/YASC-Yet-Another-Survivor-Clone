@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		var temp_xp = BASIC_XP_DROP.instantiate()
 		temp_xp.position = global_position
-		get_tree().root.get_node("/root/Game/XP").add_child(temp_xp)
+		get_tree().root.get_node("/root/Game/Drops").add_child(temp_xp)
 		queue_free()
 		
 

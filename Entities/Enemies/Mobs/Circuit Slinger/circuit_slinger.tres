@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Mob_Data" load_steps=3 format=3 uid="uid://bdi5ge713fkfb"]
 
-[ext_resource type="Texture2D" uid="uid://qkk1rvfqduhs" path="res://Entities/Mobs/Circuit Slinger/circuit_slinger_projectile.png" id="1_k7qxm"]
-[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Mobs/mob_data.gd" id="1_rqj2w"]
+[ext_resource type="Texture2D" uid="uid://qkk1rvfqduhs" path="res://Entities/Enemies/Mobs/Circuit Slinger/circuit_slinger_projectile.png" id="1_k7qxm"]
+[ext_resource type="Script" uid="uid://bs8psdv26kkb1" path="res://Entities/Enemies/Mobs/mob_data.gd" id="1_rqj2w"]
 
 [resource]
 script = ExtResource("1_rqj2w")

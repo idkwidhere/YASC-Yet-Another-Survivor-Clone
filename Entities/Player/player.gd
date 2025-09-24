@@ -10,7 +10,7 @@ class_name Player
 const LEVEL_UP_SCREEN = preload("uid://rhhk4klikl5o")
 
 
-@export var character: Character
+@export var character: Character_Data
 var speed
 var attack_damage
 var attack_speed
@@ -188,3 +188,9 @@ func _on_pickup_area_area_entered(area: Area2D) -> void:
 			xp -= xp_needed
 		area.picked_up()
 		update_level()
+	if area is Elite_Upgrade_Drop:
+		# add function to generate upgrades
+		area.picked_up()
+
+func apply_items(items: Array):
+	pass

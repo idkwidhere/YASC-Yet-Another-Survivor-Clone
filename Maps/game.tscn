@@ -370,14 +370,14 @@ tile_set = SubResource("TileSet_6et8r")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[node name="XP" type="Node2D" parent="."]
+[node name="Drops" type="Node2D" parent="."]
 
 [node name="Popups" type="Node2D" parent="."]
 
 [node name="Timers" type="Node" parent="."]
 
 [node name="MinuteTimer" type="Timer" parent="Timers"]
-wait_time = 5.0
+wait_time = 60.0
 autostart = true
 
 [node name="EnemyTimer" type="Timer" parent="Timers"]

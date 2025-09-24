@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw1y7w1nigo6u"]
 
-[ext_resource type="Script" uid="uid://dsjy2x5kdvplc" path="res://Entities/Mobs/enemy_CB2D.gd" id="1_l71ip"]
-[ext_resource type="Resource" uid="uid://d4m2wp6alco30" path="res://Entities/Mobs/Patchrat/patchrat_data.tres" id="2_bhakx"]
-[ext_resource type="Texture2D" uid="uid://ofxo68kwlp4l" path="res://Entities/Mobs/Patchrat/patchratsprite.png" id="3_k5mpx"]
+[ext_resource type="Script" uid="uid://dsjy2x5kdvplc" path="res://Entities/Enemies/Mobs/enemy_CB2D.gd" id="1_l71ip"]
+[ext_resource type="Resource" uid="uid://d4m2wp6alco30" path="res://Entities/Enemies/Mobs/Patchrat/patchrat_data.tres" id="2_bhakx"]
+[ext_resource type="Texture2D" uid="uid://ofxo68kwlp4l" path="res://Entities/Enemies/Mobs/Patchrat/patchratsprite.png" id="3_k5mpx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f410m"]
 radius = 8.0

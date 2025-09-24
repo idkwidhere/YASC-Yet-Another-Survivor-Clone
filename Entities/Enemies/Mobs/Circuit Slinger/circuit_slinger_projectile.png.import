@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qkk1rvfqduhs"
-path="res://.godot/imported/circuit_slinger_projectile.png-47ac77052e63e036767d748dda659c1a.ctex"
+path="res://.godot/imported/circuit_slinger_projectile.png-be609f49c31b41b8fe74f6243b37e884.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Mobs/Circuit Slinger/circuit_slinger_projectile.png"
-dest_files=["res://.godot/imported/circuit_slinger_projectile.png-47ac77052e63e036767d748dda659c1a.ctex"]
+source_file="res://Entities/Enemies/Mobs/Circuit Slinger/circuit_slinger_projectile.png"
+dest_files=["res://.godot/imported/circuit_slinger_projectile.png-be609f49c31b41b8fe74f6243b37e884.ctex"]
 
 [params]
 

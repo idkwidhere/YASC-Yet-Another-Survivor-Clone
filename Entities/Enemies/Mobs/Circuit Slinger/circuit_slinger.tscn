@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://hbespbwpg4em"]
+[gd_scene load_steps=6 format=3 uid="uid://bd2t8oqdhval8"]
 
-[ext_resource type="Script" uid="uid://dsjy2x5kdvplc" path="res://Entities/Mobs/enemy_CB2D.gd" id="1_1p3ce"]
-[ext_resource type="Texture2D" uid="uid://crqqovo81c0kt" path="res://Entities/Mobs/Wirehead/wireheadsprite.png" id="1_45c20"]
-[ext_resource type="Resource" uid="uid://dcvqs0dw2wbl4" path="res://Entities/Mobs/Wirehead/wirehead_data.tres" id="2_c4vw1"]
+[ext_resource type="Script" uid="uid://dsjy2x5kdvplc" path="res://Entities/Enemies/Mobs/enemy_CB2D.gd" id="1_1wd52"]
+[ext_resource type="Texture2D" uid="uid://crqqovo81c0kt" path="res://Entities/Enemies/Mobs/Wirehead/wireheadsprite.png" id="1_tbwcq"]
+[ext_resource type="Resource" uid="uid://bdi5ge713fkfb" path="res://Entities/Enemies/Mobs/Circuit Slinger/circuit_slinger.tres" id="2_q20u0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4vw1"]
 radius = 8.0
@@ -10,14 +10,14 @@ radius = 8.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4vw1"]
 height = 58.0
 
-[node name="Wirehead" type="CharacterBody2D" groups=["Enemies"]]
+[node name="CircuitSlinger" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_1p3ce")
-mob_data = ExtResource("2_c4vw1")
+script = ExtResource("1_1wd52")
+mob_data = ExtResource("2_q20u0")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_45c20")
+texture = ExtResource("1_tbwcq")
 
 [node name="EnemyCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 14)
@@ -33,5 +33,10 @@ shape = SubResource("CapsuleShape2D_c4vw1")
 unique_name_in_owner = true
 position = Vector2(0, -26)
 
+[node name="RangedAttackTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]
 [connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_body_entered"]
+[connection signal="timeout" from="RangedAttackTimer" to="." method="_on_ranged_attack_timer_timeout"]

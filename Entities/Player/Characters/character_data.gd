@@ -1,5 +1,5 @@
 extends Resource
-class_name Character
+class_name Character_Data
 
 @export var character_name: String
 @export_multiline var character_description: String
