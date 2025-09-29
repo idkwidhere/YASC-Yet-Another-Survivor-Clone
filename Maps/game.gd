@@ -23,6 +23,12 @@ var elites: Array = [
 
 var current_elites: Array = []
 
+var upgrades: Array = [
+	
+]
+
+var remaining_upgrades: Array = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
