@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx2e67r63fhu1"]
+[gd_scene load_steps=9 format=3 uid="uid://cx2e67r63fhu1"]
 
 [ext_resource type="Script" uid="uid://curqagt6towbh" path="res://Entities/Player/player.gd" id="1_3uyv8"]
 [ext_resource type="Texture2D" uid="uid://cdp7n2ahp4jet" path="res://icon.svg" id="1_mv1ah"]
-[ext_resource type="Resource" uid="uid://ctrx2ejg188ib" path="res://Entities/Player/Characters/CyborgJoe.tres" id="2_lu8i8"]
 [ext_resource type="Shader" uid="uid://udlk5xnmrykb" path="res://Entities/Player/player_hit.gdshader" id="3_tekja"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
@@ -26,7 +25,6 @@ point_count = 5
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_3uyv8")
-character = ExtResource("2_lu8i8")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_5c2io")

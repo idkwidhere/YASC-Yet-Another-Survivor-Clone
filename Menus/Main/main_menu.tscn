@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt7ksmao6jigd"]
+
+[ext_resource type="Script" uid="uid://bmm3qr130vlcx" path="res://Menus/Main/main_menu.gd" id="1_4p445"]
+[ext_resource type="Script" uid="uid://v3iwqn0ffwss" path="res://Menus/Main/character_selection.gd" id="2_je2dx"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4p445")
+
+[node name="MainScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="MainScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 920.5
+offset_top = 129.0
+offset_right = 959.5
+offset_bottom = 152.0
+grow_horizontal = 2
+text = "YASC"
+
+[node name="SubTitle" type="Label" parent="MainScreen/TitleLabel"]
+layout_mode = 0
+offset_left = -79.0
+offset_top = 27.0
+offset_right = 134.0
+offset_bottom = 50.0
+text = "Yet Another Survivor Clone!"
+
+[node name="Background" type="TextureRect" parent="MainScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 881.5
+offset_top = 469.5
+offset_right = 998.5
+offset_bottom = 570.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="MainScreen/ButtonContainer"]
+layout_mode = 2
+text = "Play/Continue"
+
+[node name="Settings" type="Button" parent="MainScreen/ButtonContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Credits" type="Button" parent="MainScreen/ButtonContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="CharacterSelection" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_je2dx")
+
+[node name="CharacterContainer" type="HBoxContainer" parent="CharacterSelection"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.55925924
+offset_left = 361.0
+offset_top = 231.0
+offset_right = 1647.0
+offset_bottom = 231.0
+metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="Button" parent="CharacterSelection"]
+layout_mode = 0
+offset_left = 1465.0
+offset_top = 873.0
+offset_right = 1636.0
+offset_bottom = 959.0
+text = "Start Game"

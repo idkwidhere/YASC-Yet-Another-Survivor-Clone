@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="YASC"
-run/main_scene="uid://dyrkc0j48lpvr"
+run/main_scene="uid://bt7ksmao6jigd"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalBus="*res://Autoloads/SignalBus.gd"
+GameLoader="*res://Autoloads/GameLoader.gd"
 
 [display]
 

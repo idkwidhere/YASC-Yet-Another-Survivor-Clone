@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvxm3stls6h84"]
+
+[ext_resource type="Script" uid="uid://bsps4r2ihc5yn" path="res://Menus/Main/character_panel.gd" id="1_2bag1"]
+
+[node name="CharacterPanel" type="Button"]
+anchors_preset = -1
+anchor_right = 0.175
+anchor_bottom = 0.41296297
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+expand_icon = true
+script = ExtResource("1_2bag1")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 151.0
+offset_bottom = 71.0
+text = "Character Name"
+
+[node name="CharacterDescription" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 158.0
+offset_right = 257.0
+offset_bottom = 390.0
+text = "Character Description"
+autowrap_mode = 2
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

@@ -42,6 +42,7 @@ func _ready() -> void:
 	# connect signals
 	SignalBus.connect("upgrade_chosen", upgrade_stats)
 	SignalBus.connect("item_chosen", add_new_item)
+	character = GameLoader.selected_character
 	
 	# load character data on game start
 	speed = character.speed

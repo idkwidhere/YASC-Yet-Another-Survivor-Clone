@@ -4,7 +4,8 @@ extends Node2D
 @onready var enemies_node: Node2D = $Enemies
 @onready var projectiles_node: Node2D = $Projectiles
 
-var player = null
+var player: Player = null
+var chosen_character: Character_Data
 var enemy_spawn_path = null
 var minutes_elapsed: int = 0
 
@@ -31,11 +32,11 @@ var remaining_upgrades: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	# signals
 	SignalBus.connect("minute_passed", minute_passed)
 	
 	player = get_node("Player")
+	player.character = chosen_character
 	enemy_spawn_path = player.get_node("EnemySpawn/EnemySpawnPath")
 	
 	for i in range(5):
