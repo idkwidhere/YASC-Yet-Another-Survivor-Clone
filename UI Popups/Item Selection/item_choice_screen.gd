@@ -30,13 +30,7 @@ func get_choices_from_tier(n) -> Dictionary:
 	var new_dict = {}
 	check_doubles_array = []
 	var i = 0
-	#for i in range(n):
-		#var tier = get_tier()
-		#var tier_upgrades = stats_dict[tier]
-		#var keys = tier_upgrades.keys()
-		#var chosen_key = keys[randi() % keys.size()]
-		#var chosen_value = tier_upgrades[chosen_key]
-		#new_dict[chosen_key] = chosen_value
+
 	while (i < n):
 		var tier = get_tier()
 		var tier_upgrades = stats_dict[tier]
@@ -49,7 +43,6 @@ func get_choices_from_tier(n) -> Dictionary:
 			check_doubles_array.append(chosen_key)
 			new_dict[chosen_key] = chosen_value
 			i += 1
-		
 	return new_dict
 
 func create_buttons(choices: Dictionary):

@@ -13,7 +13,6 @@ grow_vertical = 2
 script = ExtResource("1_4p445")
 
 [node name="MainScreen" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -70,6 +69,7 @@ layout_mode = 2
 text = "Credits"
 
 [node name="CharacterSelection" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,3 +97,10 @@ offset_top = 873.0
 offset_right = 1636.0
 offset_bottom = 959.0
 text = "Start Game"
+
+[node name="SettingsMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_down" from="MainScreen/ButtonContainer/PlayButton" to="." method="_on_play_button_button_down"]
