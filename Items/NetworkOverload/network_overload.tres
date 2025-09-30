@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item_Data" load_steps=4 format=3 uid="uid://beent4xeisi3o"]
+
+[ext_resource type="Texture2D" uid="uid://o7xl4fc5bnd" path="res://Items/NetworkOverload/network_overload_sprite.png" id="1_5q0q1"]
+[ext_resource type="Script" uid="uid://bey8og6oowqqj" path="res://Items/item_data.gd" id="1_8hfpj"]
+[ext_resource type="PackedScene" uid="uid://cbmbb77h4nnoi" path="res://Items/NetworkOverload/network_overload.tscn" id="2_u6vfs"]
+
+[resource]
+script = ExtResource("1_8hfpj")
+item_name = "Network Overload"
+item_icon = ExtResource("1_5q0q1")
+item_description = "Every 10 seconds, an enemy on screen is zapped for 50% of your damage from a network overload! "
+item_scene = ExtResource("2_u6vfs")
+metadata/_custom_type_script = "uid://bey8og6oowqqj"

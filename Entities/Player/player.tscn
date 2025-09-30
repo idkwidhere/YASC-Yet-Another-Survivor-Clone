@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cx2e67r63fhu1"]
+[gd_scene load_steps=10 format=3 uid="uid://cx2e67r63fhu1"]
 
 [ext_resource type="Script" uid="uid://curqagt6towbh" path="res://Entities/Player/player.gd" id="1_3uyv8"]
 [ext_resource type="Texture2D" uid="uid://cdp7n2ahp4jet" path="res://icon.svg" id="1_mv1ah"]
 [ext_resource type="Shader" uid="uid://udlk5xnmrykb" path="res://Entities/Player/player_hit.gdshader" id="3_tekja"]
+[ext_resource type="PackedScene" uid="uid://cbmbb77h4nnoi" path="res://Items/NetworkOverload/network_overload.tscn" id="4_tekja"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
 shader = ExtResource("3_tekja")
@@ -64,6 +65,8 @@ unique_name_in_owner = true
 
 [node name="Items" type="Node2D" parent="."]
 unique_name_in_owner = true
+
+[node name="NetworkOverload" parent="Items" instance=ExtResource("4_tekja")]
 
 [node name="Health" type="Label" parent="."]
 unique_name_in_owner = true

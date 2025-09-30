@@ -31,5 +31,9 @@ shape = SubResource("CircleShape2D_dxg6y")
 position = Vector2(1, 6)
 shape = SubResource("CapsuleShape2D_ntn7k")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="area_entered" from="EliteArea" to="." method="_on_elite_area_area_entered"]
 [connection signal="body_entered" from="EliteArea" to="." method="_on_elite_area_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

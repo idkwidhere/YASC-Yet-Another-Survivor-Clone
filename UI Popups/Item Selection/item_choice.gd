@@ -1,9 +1,12 @@
 extends Button
 class_name ItemChoice
 
+
+var item: Item_Data
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	text = item.item_name
 
 
 func _on_button_down() -> void:

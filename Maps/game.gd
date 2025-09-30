@@ -24,12 +24,6 @@ var elites: Array = [
 
 var current_elites: Array = []
 
-var upgrades: Array = [
-	
-]
-
-var remaining_upgrades: Array = []
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# signals
@@ -38,6 +32,9 @@ func _ready() -> void:
 	player = get_node("Player")
 	player.character = chosen_character
 	enemy_spawn_path = player.get_node("EnemySpawn/EnemySpawnPath")
+	
+	# populate remaining items from available items
+	GameLoader.remaining_item_choices = GameLoader.available_item_choices
 	
 	for i in range(5):
 		spawn_mob(get_random_mob())

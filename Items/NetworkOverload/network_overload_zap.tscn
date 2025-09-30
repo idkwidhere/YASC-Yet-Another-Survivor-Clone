@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://doucikh885ork"]
+
+[ext_resource type="Script" uid="uid://bwqj2qic4xtsj" path="res://Items/NetworkOverload/network_overload_zap.gd" id="1_m4vyb"]
+[ext_resource type="Shader" uid="uid://cc2bq6kqowtie" path="res://Items/NetworkOverload/network_overload_zap.gdshader" id="1_umbdp"]
+[ext_resource type="Texture2D" uid="uid://chaui2e2enckv" path="res://Items/NetworkOverload/zap_sprite.png" id="2_2fxcy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hajl2"]
+shader = ExtResource("1_umbdp")
+shader_parameter/flash_speed = 5.0
+shader_parameter/intensity = 1.5
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+
+[node name="NetworkOverloadZap" type="Sprite2D"]
+material = SubResource("ShaderMaterial_hajl2")
+texture = ExtResource("2_2fxcy")
+script = ExtResource("1_m4vyb")

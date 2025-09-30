@@ -5,7 +5,7 @@
 [node name="ItemChoice" type="Button"]
 offset_right = 63.0
 offset_bottom = 50.0
-text = "Choice"
+text = "CHOICE HEREEEE"
 script = ExtResource("1_x4dom")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

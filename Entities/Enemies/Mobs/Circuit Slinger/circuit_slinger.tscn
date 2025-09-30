@@ -37,6 +37,10 @@ position = Vector2(0, -26)
 unique_name_in_owner = true
 wait_time = 3.0
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]
 [connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_body_entered"]
 [connection signal="timeout" from="RangedAttackTimer" to="." method="_on_ranged_attack_timer_timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
