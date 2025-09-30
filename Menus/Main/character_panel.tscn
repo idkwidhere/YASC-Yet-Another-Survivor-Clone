@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://bsps4r2ihc5yn" path="res://Menus/Main/character_panel.gd" id="1_2bag1"]
 
 [node name="CharacterPanel" type="Button"]
+custom_minimum_size = Vector2(303, 345)
 anchors_preset = -1
-anchor_right = 0.175
-anchor_bottom = 0.41296297
+anchor_right = 0.1578125
+anchor_bottom = 0.31944445
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
