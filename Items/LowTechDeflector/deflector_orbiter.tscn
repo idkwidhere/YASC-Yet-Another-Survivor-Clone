@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://5rst88yt6q7j"]
+
+[ext_resource type="Texture2D" uid="uid://bc11txpl848du" path="res://Items/LowTechDeflector/orbiter_sprite.png" id="1_3tulq"]
+[ext_resource type="Script" uid="uid://cm8wdqr35yxrp" path="res://Items/LowTechDeflector/deflector_orbiter.gd" id="1_sq260"]
+[ext_resource type="Shader" uid="uid://4cxd1txl6l7r" path="res://Items/LowTechDeflector/deflector_orbiter.gdshader" id="2_t0xnx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ou5cp"]
+radius = 14.035668
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_va5cc"]
+shader = ExtResource("2_t0xnx")
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/pulse_color = Color(1, 0.3, 1, 1)
+
+[node name="DeflectorOrbiter" type="Area2D"]
+script = ExtResource("1_sq260")
+
+[node name="DeflectorCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ou5cp")
+
+[node name="DeflectorSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_va5cc")
+texture = ExtResource("1_3tulq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

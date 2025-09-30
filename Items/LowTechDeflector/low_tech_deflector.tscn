@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c43ayngps4l3h"]
+
+[ext_resource type="Script" uid="uid://dwimm4akj31k1" path="res://Items/LowTechDeflector/low_tech_deflector.gd" id="1_q5128"]
+
+[node name="LowTechDeflector" type="Node2D"]
+script = ExtResource("1_q5128")

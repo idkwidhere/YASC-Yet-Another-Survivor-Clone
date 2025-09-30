@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item_Data" load_steps=3 format=3 uid="uid://deqc16kb5mrti"]
+
+[ext_resource type="PackedScene" uid="uid://c43ayngps4l3h" path="res://Items/LowTechDeflector/low_tech_deflector.tscn" id="1_1lfbs"]
+[ext_resource type="Script" uid="uid://bey8og6oowqqj" path="res://Items/item_data.gd" id="1_4vji7"]
+
+[resource]
+script = ExtResource("1_4vji7")
+item_name = "Low Tech Deflector"
+item_description = "This deflector keeps away low tech projectiles. Upgrade it to add more orbiters."
+item_scene = ExtResource("1_1lfbs")
+metadata/_custom_type_script = "uid://bey8og6oowqqj"
