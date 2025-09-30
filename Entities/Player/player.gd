@@ -33,12 +33,17 @@ var pickup_range
 @export var total_xp: float = 0
 
 @export_category("Player Items")
-@export var player_items: Array = []
+@export var player_items: Array[Item_Data]
+
 
 # enemies in range array i guess
 var enemies_in_range: Array = []
 
 func _ready() -> void:
+	# testing at top
+	
+	
+	
 	# connect signals
 	SignalBus.connect("upgrade_chosen", upgrade_stats)
 	SignalBus.connect("item_chosen", add_new_item)
@@ -98,11 +103,16 @@ func _process(_delta: float) -> void:
 
 
 # adding and applying items
-func add_new_item(item) -> void:
-	pass
-
-func apply_items(items: Array):
-	pass
+func add_new_item(item: Item_Data) -> void:
+	player_items.append(item)
+	apply_items(player_items)
+	
+func apply_items(items: Array[Item_Data]):
+	for item in items:
+		if item not in get_node("%Items").get_children():
+			var temp_item = item.item_scene.instantiate()
+			%Items.add_child(temp_item)
+			print(get_node("%Items").get_children())
 
 
 # dealing damage

@@ -24,6 +24,6 @@ func create_buttons(choices: Array):
 		temp_item.item = item
 		%ChoiceContainer.add_child(temp_item)
 
-func choice_made():
+func choice_made(_item):
 	get_tree().paused = false
 	queue_free()

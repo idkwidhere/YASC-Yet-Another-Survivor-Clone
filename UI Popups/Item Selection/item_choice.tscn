@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://bhbabedtnbqmo" path="res://UI Popups/Item Selection/item_choice.gd" id="1_x4dom"]
 
 [node name="ItemChoice" type="Button"]
-offset_right = 63.0
-offset_bottom = 50.0
-text = "CHOICE HEREEEE"
+anchors_preset = -1
+anchor_right = 0.07447917
+anchor_bottom = 0.10092592
+text = "Choice Name"
 script = ExtResource("1_x4dom")
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

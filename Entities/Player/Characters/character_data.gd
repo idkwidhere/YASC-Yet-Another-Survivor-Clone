@@ -15,4 +15,4 @@ class_name Character_Data
 @export var pickup_range: float
 
 @export_category("Character Base Items")
-@export var character_items: Array[PackedScene]
+@export var character_items: Array[Item_Data]
