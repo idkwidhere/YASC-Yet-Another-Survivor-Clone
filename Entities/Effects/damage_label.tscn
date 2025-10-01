@@ -11,5 +11,6 @@ vertical_alignment = 1
 script = ExtResource("1_pimmo")
 
 [node name="Destroy" type="Timer" parent="."]
+autostart = true
 
 [connection signal="timeout" from="Destroy" to="." method="_on_destroy_timeout"]

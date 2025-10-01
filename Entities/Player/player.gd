@@ -124,8 +124,7 @@ func player_attack(direction) -> void:
 	var is_crit = randf() < (crit_rate / 100)
 	if is_crit:
 		dmg_temp *= crit_mult
-	
-	
+		
 	bullet_temp.position = %BulletSpawn.global_position
 	bullet_temp.direction = (find_closest_enemy().global_position - global_position).normalized()
 	bullet_temp.proj_damage = dmg_temp
@@ -148,6 +147,10 @@ func take_damage(damage_amount):
 	health -= damage_amount
 	health_label.text = str(health) + "/" + str(max_health)
 
+func heal(amount) -> void:
+	health += amount
+	update_stats()
+
 func update_stats():
 	%"Level Label".text = "Level: " + str(level)
 	%Health.text = str(health) + "/" + str(max_health)
@@ -156,11 +159,9 @@ func update_stats():
 	%"Speed Label".text = "Speed: " + str(speed)
 	%CritChanceLabel.text = "Crit %: " + str(crit_rate) + "%"
 	%CritMultLabel.text = "Crit Multiplier: " + str(crit_mult)
-	
 
 func update_level():
 	%LevelProgress.value = xp
-	
 
 func level_up():
 	level += 1
@@ -222,3 +223,7 @@ func _on_pickup_area_area_entered(area: Area2D) -> void:
 		area.picked_up()
 		var temp_item_choices = ITEM_CHOICE_SCREEN.instantiate()
 		%UI.add_child(temp_item_choices)
+	
+	if area is Health and health < max_health:
+		heal(area.health_amount)
+		area.picked_up()

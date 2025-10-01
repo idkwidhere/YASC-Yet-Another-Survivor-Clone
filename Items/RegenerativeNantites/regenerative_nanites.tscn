@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://1vpjxraucc6b"]
+[gd_scene load_steps=4 format=3 uid="uid://1vpjxraucc6b"]
 
 [ext_resource type="Texture2D" uid="uid://cn0rbao4awr65" path="res://Items/RegenerativeNantites/nanite_sprite.png" id="1_8b0y8"]
+[ext_resource type="Script" uid="uid://bax104qcvheo1" path="res://Items/RegenerativeNantites/regenerative_nanites.gd" id="1_elnbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_274hq"]
 size = Vector2(20, 7.5)
 
 [node name="RegenerativeNanites" type="Area2D"]
+script = ExtResource("1_elnbg")
 
 [node name="NaniteSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)

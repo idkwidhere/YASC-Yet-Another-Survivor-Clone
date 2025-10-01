@@ -71,7 +71,7 @@ func spawn_elite(elite_type):
 
 func eval_time(elapsed_time):
 	match elapsed_time:
-		2:
+		1:
 			spawn_elite(get_random_elite())
 
 func minute_passed(minute) -> void:

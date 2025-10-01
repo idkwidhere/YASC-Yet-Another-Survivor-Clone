@@ -17,6 +17,7 @@ var elite_can_fire = false
 
 const MOB_PROJECTILE = preload("uid://csewfudf1m4xx")
 const ELITE_UPGRADE_DROP = preload("uid://coswhma77rkqk")
+const REGENERATIVE_NANITES = preload("uid://1vpjxraucc6b")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,6 +49,12 @@ func _process(_delta: float) -> void:
 		var temp_drop = ELITE_UPGRADE_DROP.instantiate()
 		temp_drop.position = global_position
 		get_tree().root.get_node("/root/Game/Drops").add_child(temp_drop)
+		
+		if drop_health():
+			var temp_health = REGENERATIVE_NANITES.instantiate()
+			temp_health.global_position = position
+			get_tree().root.get_node("/root/Game/Drops").add_child(temp_health)
+		
 		queue_free()
 		
 
@@ -66,6 +73,16 @@ func _physics_process(_delta: float) -> void:
 				move_and_slide()
 		else:
 			move_and_slide()
+
+func drop_health() -> bool:
+	var drop_roll = randf()
+	var drop_chance = 0.025
+	if drop_roll <= drop_chance:
+		return true
+	else:
+		return false
+
+
 
 func ranged_attack():
 	if elite_can_fire:

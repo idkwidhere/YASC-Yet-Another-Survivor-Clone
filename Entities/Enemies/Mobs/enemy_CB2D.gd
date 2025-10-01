@@ -4,6 +4,9 @@ class_name Mob
 @export var mob_data: Mob_Data
 const BASIC_XP_DROP = preload("uid://bu3bseyt21tk5")
 const DAMAGE_LABEL = preload("uid://b5l6n8d3mgsbb")
+const MOB_PROJECTILE = preload("uid://csewfudf1m4xx")
+const REGENERATIVE_NANITES = preload("uid://1vpjxraucc6b")
+
 
 var player
 var health
@@ -15,7 +18,7 @@ var player_in_ranged_range
 var mob_projectile_texture
 var mob_can_fire = false
 
-const MOB_PROJECTILE = preload("uid://csewfudf1m4xx")
+
 
 
 
@@ -34,7 +37,6 @@ func _ready() -> void:
 		%RangedAttackTimer.wait_time = mob_data.mob_attack_speed
 		%RangedAttackTimer.start()
 		mob_projectile_texture = mob_data.mob_projectile_texture
-		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -43,6 +45,10 @@ func _process(_delta: float) -> void:
 		var temp_xp = BASIC_XP_DROP.instantiate()
 		temp_xp.position = global_position
 		get_tree().root.get_node("/root/Game/Drops").add_child(temp_xp)
+		if drop_health():
+			var temp_health = REGENERATIVE_NANITES.instantiate()
+			temp_health.global_position = position
+			get_tree().root.get_node("/root/Game/Drops").add_child(temp_health)
 		queue_free()
 		
 
@@ -82,6 +88,14 @@ func take_damage(damage_amount):
 	health -= damage_amount
 	damage_popup(damage_amount)
 
+func drop_health() -> bool:
+	var drop_roll = randf()
+	var drop_chance = 0.025
+	if drop_roll <= drop_chance:
+		return true
+	else:
+		return false
+
 # fuck this thing, fix later
 func damage_popup(damage_amount):
 	var dmglabel = DAMAGE_LABEL.instantiate()
@@ -98,11 +112,9 @@ func _on_enemy_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.take_damage(damage)
 
-
 func _on_ranged_attack_timer_timeout() -> void:
 	if mob_can_fire:
 		ranged_attack()
-	
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	add_to_group("EnemyOnScreen")
