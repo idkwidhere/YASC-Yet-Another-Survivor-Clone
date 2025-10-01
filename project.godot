@@ -13,7 +13,7 @@ config_version=5
 config/name="YASC"
 run/main_scene="uid://bt7ksmao6jigd"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://b3kbpdok24gq3"
 
 [autoload]
 

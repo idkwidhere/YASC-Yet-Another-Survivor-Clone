@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dyrkc0j48lpvr"]
+[gd_scene load_steps=9 format=4 uid="uid://dyrkc0j48lpvr"]
 
 [ext_resource type="Script" uid="uid://bv7e8ix1ffd7f" path="res://Maps/game.gd" id="1_6et8r"]
 [ext_resource type="PackedScene" uid="uid://cx2e67r63fhu1" path="res://Entities/Player/player.tscn" id="1_n8bjf"]
 [ext_resource type="Texture2D" uid="uid://c6gjk20qmp0fi" path="res://Maps/Assets/GRASS.png" id="2_y2ywj"]
 [ext_resource type="Script" uid="uid://cyfptnm4yqynb" path="res://Maps/stopwatch.gd" id="4_6et8r"]
 [ext_resource type="PackedScene" uid="uid://1vpjxraucc6b" path="res://Items/RegenerativeNantites/regenerative_nanites.tscn" id="4_rxd1x"]
+[ext_resource type="Theme" uid="uid://fn1jsrkhhwh5" path="res://Assets/YASCTheme.tres" id="5_tss70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ldu1"]
 texture = ExtResource("2_y2ywj")
@@ -399,6 +400,7 @@ offset_top = 21.0
 offset_right = 58.25
 offset_bottom = 44.0
 grow_horizontal = 2
+theme = ExtResource("5_tss70")
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
