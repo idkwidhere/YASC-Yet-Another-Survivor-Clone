@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="YASC"
+config/name="YASC-Yet-Another-Survivors-Clone"
 run/main_scene="uid://bt7ksmao6jigd"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://b3kbpdok24gq3"

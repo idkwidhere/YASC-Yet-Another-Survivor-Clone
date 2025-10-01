@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item_Data" load_steps=3 format=3 uid="uid://diu3js6fhd7pv"]
+
+[ext_resource type="Script" uid="uid://bey8og6oowqqj" path="res://Items/item_data.gd" id="1_3b5h0"]
+[ext_resource type="PackedScene" uid="uid://dm11dyurau3e3" path="res://Items/ProcessorUpgrade/processor_upgrade.tscn" id="1_uut3d"]
+
+[resource]
+script = ExtResource("1_3b5h0")
+item_name = "Processor Upgrade"
+item_scene = ExtResource("1_uut3d")
+metadata/_custom_type_script = "uid://bey8og6oowqqj"

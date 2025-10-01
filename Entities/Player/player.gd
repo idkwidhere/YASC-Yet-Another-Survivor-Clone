@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-
 @onready var player_range: CollisionShape2D = $RangeArea/PlayerRange
 @onready var health_label: Label = $Health
 
@@ -10,18 +9,23 @@ class_name Player
 const LEVEL_UP_SCREEN = preload("uid://rhhk4klikl5o")
 const ITEM_CHOICE_SCREEN = preload("uid://xlvnd6c8acru")
 
-
-
 @export var character: Character_Data
 var speed
 var attack_damage
-var attack_speed
+var attack_speed = 1
 var max_health
 var health
 var pierce
 var crit_rate
 var crit_mult
 var pickup_range
+
+var speed_modifier: float = 1
+var attack_damage_modifier: float = 1
+var attack_speed_modifier: float = 1
+var crit_rate_modifier: float = 1
+var crit_mult_modifier: float = 1
+var pickup_range_modifier: float = 1
 
 # leveling stuff
 @export_category("Player Level Detail")
@@ -101,7 +105,6 @@ func _process(_delta: float) -> void:
 	#if player_health <= 0:
 		#print("game over WIP")
 
-
 # adding and applying items
 func add_new_item(item: Item_Data) -> void:
 	player_items.append(item)
@@ -114,11 +117,11 @@ func apply_items(items: Array[Item_Data]):
 			%Items.add_child(temp_item)
 			print(get_node("%Items").get_children())
 
-
 # dealing damage
 func player_attack(direction) -> void:
 	var bullet_temp = player_basic_projectile.instantiate()
 	var dmg_temp = attack_damage
+	print(dmg_temp)
 	
 	
 	var is_crit = randf() < (crit_rate / 100)
@@ -179,6 +182,7 @@ func upgrade_stats(stat, value):
 	if stat == "pickup_range":
 		%PickupCollider.shape.radius = pickup_range
 	update_stats()
+	
 	
 func find_closest_enemy() -> Node2D:
 	var closest_enemy: Node2D = null
