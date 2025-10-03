@@ -3,6 +3,7 @@ class_name Character_Data
 
 @export_category("Character Base Stats")
 @export var character_name: String
+@export var character_sprite: Texture
 @export_multiline var character_description: String
 @export var max_health: int
 @export var speed: float

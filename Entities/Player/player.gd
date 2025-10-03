@@ -54,6 +54,7 @@ func _ready() -> void:
 	character = GameLoader.selected_character
 	
 	# load character data on game start
+	$PlayerSprite.texture = character.character_sprite
 	speed = character.speed
 	attack_damage = character.attack_damage
 	pierce = character.proj_pierce
